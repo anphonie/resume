@@ -156,60 +156,35 @@
     /* ══════════ HERO ══════════ */
     .hero {
       min-height: calc(100vh - 64px);
-      display: flex; align-items: center;
-      padding: 3rem 2rem;
+      display: flex; align-items: center; justify-content: center;
+      padding: 4rem 2rem 5rem;
       position: relative; overflow: hidden;
-      background: var(--md-surface-lowest);
     }
 
-    /* Layered organic blobs – green, blue, amber, yellow tones */
-    .hero-canvas {
-      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
-    }
-    .blob {
-      position: absolute; border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
-    }
-    .blob-a {
-      width: 520px; height: 480px;
-      background: radial-gradient(ellipse, rgba(152,224,178,0.42) 0%, rgba(216,243,220,0.28) 55%, transparent 80%);
-      top: -100px; right: -60px;
-      animation: drift 14s ease-in-out infinite;
-    }
-    .blob-b {
-      width: 340px; height: 360px;
-      background: radial-gradient(ellipse, rgba(173,219,255,0.38) 0%, rgba(201,230,255,0.22) 55%, transparent 80%);
-      bottom: -80px; right: 18%;
-      animation: drift 11s ease-in-out infinite 3s;
-    }
-    .blob-c {
-      width: 280px; height: 260px;
-      background: radial-gradient(ellipse, rgba(255,225,175,0.38) 0%, rgba(255,240,195,0.24) 55%, transparent 80%);
-      top: 25%; left: -60px;
-      animation: drift 16s ease-in-out infinite 6s;
-    }
-    .blob-d {
-      width: 200px; height: 200px;
-      background: radial-gradient(ellipse, rgba(255,200,130,0.30) 0%, transparent 75%);
-      bottom: 10%; left: 30%;
-      animation: drift 13s ease-in-out infinite 2s;
-    }
-    @keyframes drift {
-      0%,100% { transform: translate(0,0) scale(1) rotate(0deg); }
-      30%      { transform: translate(-14px,-18px) scale(1.03) rotate(2deg); }
-      65%      { transform: translate(10px,12px) scale(0.97) rotate(-2deg); }
+    /* Queenstown banner image */
+    .hero-banner-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 40%;
+      z-index: 0;
     }
 
-    /* Decorative SVG – botanical line art top-right */
-    .hero-botanical {
-      position: absolute; top: -20px; right: -20px;
-      width: 420px; height: 420px; pointer-events: none; opacity: 0.22;
+    /* Dark-to-bottom gradient scrim so text is legible */
+    .hero-scrim {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(15,30,20,0.38) 0%,
+        rgba(10,22,14,0.55) 50%,
+        rgba(8,18,10,0.72) 100%
+      );
     }
 
     .hero-inner {
-      position: relative; z-index: 1;
-      max-width: 1100px; margin: 0 auto; width: 100%;
-      display: grid; grid-template-columns: 1fr auto;
-      gap: 3rem; align-items: center;
+      position: relative; z-index: 2;
+      max-width: 860px; margin: 0 auto; width: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
     }
 
     /* Open to work chip */
@@ -217,49 +192,53 @@
       display: inline-flex; align-items: center; gap: 0.5rem;
       padding: 0.42rem 1.1rem;
       border-radius: var(--shape-full);
-      background: var(--md-tertiary-container);
-      border: 1.5px solid rgba(176,94,0,0.35);
-      color: var(--md-on-tertiary-container);
+      background: rgba(255,225,140,0.18);
+      border: 1.5px solid rgba(255,210,80,0.55);
+      color: #FFF0B3;
       font-size: 0.8rem; font-weight: 700;
       margin-bottom: 1.5rem;
       opacity: 0; animation: fadeUp 0.6s 0.1s forwards;
     }
     .otw-pulse {
       width: 8px; height: 8px; border-radius: 50%;
-      background: var(--md-tertiary);
+      background: #FBBC04;
       animation: ripple 2.2s ease-in-out infinite;
       flex-shrink: 0;
     }
     @keyframes ripple {
-      0%,100% { box-shadow: 0 0 0 2px rgba(176,94,0,.25); }
-      50%      { box-shadow: 0 0 0 7px rgba(176,94,0,.07); }
+      0%,100% { box-shadow: 0 0 0 2px rgba(251,188,4,.35); }
+      50%      { box-shadow: 0 0 0 7px rgba(251,188,4,.10); }
     }
 
     .hero-display {
-      font-size: clamp(3rem, 8.5vw, 6rem);
+      font-size: clamp(3rem, 8.5vw, 6.5rem);
       font-weight: 800; line-height: 0.97;
       letter-spacing: -0.03em;
-      color: var(--md-on-surface);
+      color: #FFFFFF;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
       opacity: 0; animation: fadeUp 0.75s 0.28s forwards;
     }
-    .hero-display .hi { color: var(--md-primary); }
+    .hero-display .hi {
+      color: #96D6AA;
+      text-shadow: 0 2px 24px rgba(45,106,79,0.5);
+    }
 
     .hero-headline {
       margin-top: 1.1rem;
-      font-size: 1.05rem; font-weight: 600;
-      color: var(--md-on-surface-variant);
+      font-size: 1.1rem; font-weight: 600;
+      color: rgba(255,255,255,0.85);
       opacity: 0; animation: fadeUp 0.7s 0.44s forwards;
     }
     .hero-location {
-      display: flex; align-items: center; gap: 0.4rem;
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
       margin-top: 0.55rem;
-      font-size: 0.86rem; color: var(--md-on-surface-variant);
+      font-size: 0.86rem; color: rgba(255,255,255,0.7);
       opacity: 0; animation: fadeUp 0.7s 0.54s forwards;
     }
 
     .btn-row {
       display: flex; flex-wrap: wrap; gap: 0.75rem;
-      margin-top: 2rem;
+      margin-top: 2rem; justify-content: center;
       opacity: 0; animation: fadeUp 0.7s 0.68s forwards;
     }
     .md-btn {
@@ -287,35 +266,13 @@
     }
     .btn-outlined:hover { background: var(--md-primary-container); border-color: var(--md-primary); }
 
-    /* Hero photo */
-    .hero-photo {
-      position: relative; flex-shrink: 0;
-      opacity: 0; animation: fadeUp 0.8s 0.5s forwards;
-    }
-    .hero-photo::before {
-      content: '';
-      position: absolute; inset: -8px;
-      border-radius: var(--shape-xl);
-      background: linear-gradient(135deg,
-        var(--md-primary-container),
-        var(--md-secondary-container),
-        var(--md-tertiary-container));
-      z-index: 0;
-    }
-    .hero-photo img {
-      position: relative; z-index: 1;
-      width: 220px; height: 265px; object-fit: cover;
-      border-radius: var(--shape-xl);
-      box-shadow: var(--elev-3);
-      display: block;
-    }
-
     .scroll-cue {
       position: absolute; bottom: 1.75rem; left: 50%; transform: translateX(-50%);
       display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
       font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--md-on-surface-variant);
+      color: rgba(255,255,255,0.6);
       opacity: 0; animation: fadeUp 0.6s 1.3s forwards;
+      z-index: 2;
     }
     .scroll-cue .icon { animation: bob 1.9s ease-in-out infinite; font-size: 22px; }
     @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
@@ -630,8 +587,6 @@
       .app-bar { padding: 0 0.75rem; }
       .nav-chips { display: none; }
       .hero, .content { padding-left: 1.25rem; padding-right: 1.25rem; }
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-photo { display: none; }
       .about-grid { grid-template-columns: 1fr; }
       .photo-frame { order: -1; }
       .hobby-grid { grid-template-columns: repeat(2,1fr); }
@@ -656,7 +611,7 @@
     <a href="https://www.linkedin.com/in/anphonie/" target="_blank" class="icon-btn" title="LinkedIn">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
     </a>
-    <a href="mailto:anthonyfong20@proton.me" class="icon-btn" title="Email">
+    <a href="/cdn-cgi/l/email-protection#4d2c2339252223342b22232a7f7d0d3d3f22392223632028" class="icon-btn" title="Email">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     </a>
   </div>
@@ -666,66 +621,38 @@
 
   <!-- ══ HERO ══ -->
   <section class="hero">
-    <div class="hero-canvas">
-      <div class="blob blob-a"></div>
-      <div class="blob blob-b"></div>
-      <div class="blob blob-c"></div>
-      <div class="blob blob-d"></div>
-
-      <!-- Botanical SVG decoration -->
-      <svg class="hero-botanical" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
-        <!-- Stems -->
-        <path d="M360 400 Q340 320 370 240 Q390 180 350 120" stroke="#2D6A4F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M380 400 Q400 340 385 270 Q370 210 400 150" stroke="#2D6A4F" stroke-width="2" fill="none" stroke-linecap="round" opacity=".6"/>
-        <path d="M340 380 Q310 310 330 230 Q345 170 310 100" stroke="#1A6FA8" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
-        <!-- Leaves -->
-        <ellipse cx="345" cy="200" rx="28" ry="14" fill="#D8F3DC" stroke="#2D6A4F" stroke-width="1.5" transform="rotate(-40 345 200)"/>
-        <ellipse cx="375" cy="155" rx="24" ry="11" fill="#D8F3DC" stroke="#2D6A4F" stroke-width="1.5" transform="rotate(30 375 155)" opacity=".7"/>
-        <ellipse cx="325" cy="160" rx="22" ry="10" fill="#C9E6FF" stroke="#1A6FA8" stroke-width="1.5" transform="rotate(-55 325 160)" opacity=".7"/>
-        <ellipse cx="395" cy="220" rx="20" ry="9" fill="#FFE1BF" stroke="#B05E00" stroke-width="1.5" transform="rotate(20 395 220)" opacity=".65"/>
-        <!-- Flower clusters -->
-        <circle cx="350" cy="118" r="8"  fill="#FFF0C2" stroke="#C07A00" stroke-width="1.5"/>
-        <circle cx="365" cy="108" r="6"  fill="#FFE1BF" stroke="#B05E00" stroke-width="1.5" opacity=".8"/>
-        <circle cx="338" cy="110" r="5"  fill="#D8F3DC" stroke="#2D6A4F" stroke-width="1.5" opacity=".8"/>
-        <circle cx="405" cy="148" r="7"  fill="#C9E6FF" stroke="#1A6FA8" stroke-width="1.5" opacity=".75"/>
-        <circle cx="420" cy="160" r="5"  fill="#D8F3DC" stroke="#2D6A4F" stroke-width="1.5" opacity=".65"/>
-        <!-- Small dots -->
-        <circle cx="360" cy="90"  r="3" fill="#FFF0C2" opacity=".7"/>
-        <circle cx="330" cy="95"  r="2.5" fill="#C9E6FF" opacity=".6"/>
-        <circle cx="378" cy="100" r="2" fill="#D8F3DC" opacity=".7"/>
-      </svg>
-    </div>
+    <!-- Queenstown landscape banner -->
+    <img
+      class="hero-banner-img"
+      src="https://anphonie.github.io/resume/img/Queenstown.jpg"
+      alt="Queenstown landscape — own work"
+      onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(160deg,#1a3a2a 0%,#0e2233 100%)'"
+    />
+    <div class="hero-scrim"></div>
 
     <div class="hero-inner">
-      <div>
-        <div class="otw-chip">
-          <div class="otw-pulse"></div>
-          Open to new opportunities
-        </div>
-        <h1 class="hero-display">Anthony<br/><span class="hi">Fong.</span></h1>
-        <p class="hero-headline">IT Professional &nbsp;·&nbsp; ITIL V4 Certified &nbsp;·&nbsp; UTS Graduate</p>
-        <p class="hero-location">
-          <span class="icon" style="font-size:16px">location_on</span>
-          Sydney, New South Wales, Australia &nbsp;·&nbsp; He/Him
-        </p>
-        <div class="btn-row">
-          <a href="https://drive.google.com/file/d/1TMazSgcjxOLbI-U0XYVIY9Hu4yoVxxgM/view?usp=sharing"
-             class="md-btn btn-filled" target="_blank">
-            <span class="icon">download</span>Resume PDF
-          </a>
-          <a href="https://www.linkedin.com/in/anphonie/" class="md-btn btn-tonal" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
-          <a href="mailto:anthonyfong20@proton.me" class="md-btn btn-outlined">
-            <span class="icon">mail</span>Contact Me
-          </a>
-        </div>
+      <div class="otw-chip">
+        <div class="otw-pulse"></div>
+        Open to new opportunities
       </div>
-
-      <div class="hero-photo">
-        <img src="https://anphonie.github.io/resume/img/Cropped.jpg" alt="Anthony Fong"
-          onerror="this.parentElement.style.display='none'"/>
+      <h1 class="hero-display">Anthony<br/><span class="hi">Fong.</span></h1>
+      <p class="hero-headline">IT Professional &nbsp;·&nbsp; ITIL V4 Certified &nbsp;·&nbsp; UTS Graduate</p>
+      <p class="hero-location">
+        <span class="icon" style="font-size:16px">location_on</span>
+        Sydney, New South Wales, Australia &nbsp;·&nbsp; He/Him
+      </p>
+      <div class="btn-row">
+        <a href="https://drive.google.com/file/d/1TMazSgcjxOLbI-U0XYVIY9Hu4yoVxxgM/view?usp=sharing"
+           class="md-btn btn-filled" target="_blank">
+          <span class="icon">download</span>Resume PDF
+        </a>
+        <a href="https://www.linkedin.com/in/anphonie/" class="md-btn btn-tonal" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:anthonyfong20@proton.me" class="md-btn btn-outlined">
+          <span class="icon">mail</span>Contact Me
+        </a>
       </div>
     </div>
 
@@ -1021,10 +948,10 @@
     <a href="https://anphonie.itch.io/drippity-drop" target="_blank" class="footer-link">🎮 Drippity Drop</a>
   </div>
   <p class="footer-copy">Sydney, Australia &nbsp;·&nbsp; He/Him &nbsp;·&nbsp; Open to new opportunities</p>
-  <p class="footer-copy">Header photo: Te Anau Downs Scenic Lookout — own work</p>
+  <p class="footer-copy">Banner photo: Queenstown, New Zealand — own work</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Progress bar + app bar elevation
   const bar = document.getElementById('progress');
   const appBar = document.getElementById('appBar');
@@ -1050,15 +977,4 @@
       const el = document.getElementById(id);
       if (el && window.scrollY >= el.offsetTop - 130) cur = id;
     });
-    chips.forEach(c => c.classList.toggle('active', c.getAttribute('href') === '#' + cur));
-  }, { passive: true });
-
-  // Gentle blob parallax
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    const bs = document.querySelectorAll('.blob');
-    bs.forEach((b, i) => { b.style.transform = `translateY(${y * (0.05 + i * 0.02)}px)`; });
-  }, { passive: true });
-</script>
-</body>
-</html>
+    chips.forEach(c => c.classList.toggle('active', c.getAttribute('hr
