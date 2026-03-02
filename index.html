@@ -1,230 +1,1064 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Anthony Fong</title>
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.dark.min.css" />
-  </head>
-  <body>
-    <!-- Start yotur project here-->
-    <header><!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <!-- Container wrapper -->
-  <div class="container">
-    <!-- Toggle button -->
-    <button
-      data-mdb-collapse-init
-      class="navbar-toggler"
-      type="button"
-      data-mdb-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anthony Fong</title>
 
-    <!-- Collapsible wrapper -->
-    <div 
-      class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="https://www.linkedin.com/in/anphonie/">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <!-- Left links -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link text-secondary fw-bold" href="https://www.linkedin.com/in/anphonie/">Anthony Fong</a>
-        </li>
-      </ul>
-      <!-- Left links -->
-    </div>
- 
-    <!-- Right elements -->
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-        <a class="nav-link" href="mailto:anthonyfong20@proton.me">Contact Me</a>
-      </li>
-    </ul>
-  </div>
-  <!-- Container wrapper -->
-</nav>
-<!-- Background image -->
-<div
-class="p-5 text-center bg-image"
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"/>
 
-style="
-  background-image:url('img/Queenstown.JPG');
-  height: 500px;
-"
->
-<div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
-  <div class="d-flex justify-content-center align-items-center h-100">
-    <div class="text-white">
-      <h1 class="mb-3">Anthony Fong</h1>
-      <h4 class="mb-3">Service Desk Analyst II</h4>
-      <a data-mdb-ripple-init class="btn btn-outline-light btn-lg" href="https://drive.google.com/file/d/1TMazSgcjxOLbI-U0XYVIY9Hu4yoVxxgM/view?usp=sharing" role="button"
-      >Resume</a>
-    </div>
+  <style>
+    /* ══════════════════════════════════════════════════════
+       MD3 COLOUR SCHEME
+       Primary:   Sage Green   (#3A6B4A)
+       Secondary: Sky Blue     (#2E6E9E)
+       Tertiary:  Warm Amber   (#A0590A)
+       Neutral:   Warm Cream   background
+    ══════════════════════════════════════════════════════ */
+    :root {
+      /* ── Primary: Sage Green ── */
+      --md-primary:                #2D6A4F;
+      --md-on-primary:             #FFFFFF;
+      --md-primary-container:      #D8F3DC;
+      --md-on-primary-container:   #062612;
+
+      /* ── Secondary: Sky Blue ── */
+      --md-secondary:              #1A6FA8;
+      --md-on-secondary:           #FFFFFF;
+      --md-secondary-container:    #C9E6FF;
+      --md-on-secondary-container: #001E31;
+
+      /* ── Tertiary: Warm Amber/Orange ── */
+      --md-tertiary:               #B05E00;
+      --md-on-tertiary:            #FFFFFF;
+      --md-tertiary-container:     #FFE1BF;
+      --md-on-tertiary-container:  #341A00;
+
+      /* ── Quaternary accent: Soft Yellow ── */
+      --md-yellow:                 #C07A00;
+      --md-yellow-container:       #FFF0C2;
+      --md-on-yellow-container:    #261900;
+
+      /* ── Surfaces ── */
+      --md-background:             #F7FAF8;
+      --md-on-background:          #191D1A;
+      --md-surface:                #F7FAF8;
+      --md-on-surface:             #191D1A;
+      --md-surface-variant:        #DBE5DC;
+      --md-on-surface-variant:     #404943;
+      --md-surface-lowest:         #FFFFFF;
+      --md-surface-low:            #F1F7F2;
+      --md-surface-container:      #EBF3EC;
+      --md-surface-high:           #E5EDE6;
+      --md-surface-highest:        #E0E8E1;
+
+      --md-outline:                #6F7A70;
+      --md-outline-variant:        #BFC9C0;
+      --md-inverse-surface:        #2E322F;
+      --md-inverse-on-surface:     #EFF3EE;
+      --md-inverse-primary:        #96D6AA;
+
+      /* ── Shape tokens ── */
+      --shape-xs:   4px;
+      --shape-sm:   8px;
+      --shape-md:   12px;
+      --shape-lg:   16px;
+      --shape-xl:   28px;
+      --shape-full: 9999px;
+
+      /* ── Elevation ── */
+      --elev-1: 0 1px 2px rgba(0,0,0,.08), 0 2px 6px rgba(45,106,79,.07);
+      --elev-2: 0 1px 2px rgba(0,0,0,.09), 0 3px 8px rgba(45,106,79,.09);
+      --elev-3: 0 4px 8px rgba(0,0,0,.09), 0 6px 20px rgba(45,106,79,.11);
+
+      --font: 'Nunito', 'Google Sans', 'Product Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--md-background);
+      color: var(--md-on-background);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .icon {
+      font-family: 'Material Symbols Rounded';
+      font-size: 20px; line-height: 1;
+      vertical-align: middle;
+      font-variation-settings: 'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;
+      display: inline-block; user-select: none;
+    }
+
+    /* ── PROGRESS BAR ── */
+    #progress {
+      position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+      z-index: 200; transition: width 0.1s linear;
+      background: linear-gradient(90deg,
+        var(--md-primary),
+        var(--md-secondary),
+        var(--md-tertiary),
+        var(--md-yellow));
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* ── TOP APP BAR ── */
+    .app-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 64px; padding: 0 1rem 0 1.5rem;
+      display: flex; align-items: center;
+      background: rgba(247,250,248,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--md-outline-variant);
+      transition: box-shadow 0.3s;
+    }
+    .app-bar.elevated { box-shadow: var(--elev-2); }
+    .app-bar-title {
+      font-size: 1.25rem; font-weight: 800;
+      color: var(--md-on-surface); flex: 1;
+      letter-spacing: -0.02em;
+    }
+    .app-bar-title span { color: var(--md-primary); }
+
+    .nav-chips { display: flex; gap: 0.2rem; margin-left: 1rem; }
+    .nav-chip {
+      font-family: var(--font); font-size: 0.8rem; font-weight: 700;
+      padding: 0.38rem 1rem; border-radius: var(--shape-full);
+      border: none; background: transparent;
+      color: var(--md-on-surface-variant);
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-chip:hover { background: var(--md-surface-high); color: var(--md-on-surface); }
+    .nav-chip.active {
+      background: var(--md-primary-container);
+      color: var(--md-on-primary-container);
+    }
+
+    .bar-actions { display: flex; gap: 0.25rem; }
+    .icon-btn {
+      width: 40px; height: 40px; border-radius: var(--shape-full);
+      display: flex; align-items: center; justify-content: center;
+      border: none; background: transparent; cursor: pointer;
+      color: var(--md-on-surface-variant); text-decoration: none;
+      transition: background 0.2s;
+    }
+    .icon-btn:hover { background: var(--md-surface-high); color: var(--md-on-surface); }
+
+    /* ── MAIN ── */
+    main { padding-top: 64px; }
+
+    /* ══════════ HERO ══════════ */
+    .hero {
+      min-height: calc(100vh - 64px);
+      display: flex; align-items: center;
+      padding: 3rem 2rem;
+      position: relative; overflow: hidden;
+      background: var(--md-surface-lowest);
+    }
+
+    /* Layered organic blobs – green, blue, amber, yellow tones */
+    .hero-canvas {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .blob {
+      position: absolute; border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+    }
+    .blob-a {
+      width: 520px; height: 480px;
+      background: radial-gradient(ellipse, rgba(152,224,178,0.42) 0%, rgba(216,243,220,0.28) 55%, transparent 80%);
+      top: -100px; right: -60px;
+      animation: drift 14s ease-in-out infinite;
+    }
+    .blob-b {
+      width: 340px; height: 360px;
+      background: radial-gradient(ellipse, rgba(173,219,255,0.38) 0%, rgba(201,230,255,0.22) 55%, transparent 80%);
+      bottom: -80px; right: 18%;
+      animation: drift 11s ease-in-out infinite 3s;
+    }
+    .blob-c {
+      width: 280px; height: 260px;
+      background: radial-gradient(ellipse, rgba(255,225,175,0.38) 0%, rgba(255,240,195,0.24) 55%, transparent 80%);
+      top: 25%; left: -60px;
+      animation: drift 16s ease-in-out infinite 6s;
+    }
+    .blob-d {
+      width: 200px; height: 200px;
+      background: radial-gradient(ellipse, rgba(255,200,130,0.30) 0%, transparent 75%);
+      bottom: 10%; left: 30%;
+      animation: drift 13s ease-in-out infinite 2s;
+    }
+    @keyframes drift {
+      0%,100% { transform: translate(0,0) scale(1) rotate(0deg); }
+      30%      { transform: translate(-14px,-18px) scale(1.03) rotate(2deg); }
+      65%      { transform: translate(10px,12px) scale(0.97) rotate(-2deg); }
+    }
+
+    /* Decorative SVG – botanical line art top-right */
+    .hero-botanical {
+      position: absolute; top: -20px; right: -20px;
+      width: 420px; height: 420px; pointer-events: none; opacity: 0.22;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 3rem; align-items: center;
+    }
+
+    /* Open to work chip */
+    .otw-chip {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.42rem 1.1rem;
+      border-radius: var(--shape-full);
+      background: var(--md-tertiary-container);
+      border: 1.5px solid rgba(176,94,0,0.35);
+      color: var(--md-on-tertiary-container);
+      font-size: 0.8rem; font-weight: 700;
+      margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp 0.6s 0.1s forwards;
+    }
+    .otw-pulse {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--md-tertiary);
+      animation: ripple 2.2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes ripple {
+      0%,100% { box-shadow: 0 0 0 2px rgba(176,94,0,.25); }
+      50%      { box-shadow: 0 0 0 7px rgba(176,94,0,.07); }
+    }
+
+    .hero-display {
+      font-size: clamp(3rem, 8.5vw, 6rem);
+      font-weight: 800; line-height: 0.97;
+      letter-spacing: -0.03em;
+      color: var(--md-on-surface);
+      opacity: 0; animation: fadeUp 0.75s 0.28s forwards;
+    }
+    .hero-display .hi { color: var(--md-primary); }
+
+    .hero-headline {
+      margin-top: 1.1rem;
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--md-on-surface-variant);
+      opacity: 0; animation: fadeUp 0.7s 0.44s forwards;
+    }
+    .hero-location {
+      display: flex; align-items: center; gap: 0.4rem;
+      margin-top: 0.55rem;
+      font-size: 0.86rem; color: var(--md-on-surface-variant);
+      opacity: 0; animation: fadeUp 0.7s 0.54s forwards;
+    }
+
+    .btn-row {
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      margin-top: 2rem;
+      opacity: 0; animation: fadeUp 0.7s 0.68s forwards;
+    }
+    .md-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.68rem 1.55rem;
+      border-radius: var(--shape-full);
+      font-family: var(--font); font-size: 0.9rem; font-weight: 700;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.18s;
+    }
+    .btn-filled {
+      background: var(--md-primary); color: var(--md-on-primary);
+      box-shadow: var(--elev-1);
+    }
+    .btn-filled:hover { box-shadow: var(--elev-3); transform: translateY(-2px); }
+    .btn-tonal {
+      background: var(--md-secondary-container);
+      color: var(--md-on-secondary-container);
+    }
+    .btn-tonal:hover { box-shadow: var(--elev-2); transform: translateY(-2px); }
+    .btn-outlined {
+      background: transparent;
+      color: var(--md-primary);
+      border: 1.5px solid var(--md-outline);
+    }
+    .btn-outlined:hover { background: var(--md-primary-container); border-color: var(--md-primary); }
+
+    /* Hero photo */
+    .hero-photo {
+      position: relative; flex-shrink: 0;
+      opacity: 0; animation: fadeUp 0.8s 0.5s forwards;
+    }
+    .hero-photo::before {
+      content: '';
+      position: absolute; inset: -8px;
+      border-radius: var(--shape-xl);
+      background: linear-gradient(135deg,
+        var(--md-primary-container),
+        var(--md-secondary-container),
+        var(--md-tertiary-container));
+      z-index: 0;
+    }
+    .hero-photo img {
+      position: relative; z-index: 1;
+      width: 220px; height: 265px; object-fit: cover;
+      border-radius: var(--shape-xl);
+      box-shadow: var(--elev-3);
+      display: block;
+    }
+
+    .scroll-cue {
+      position: absolute; bottom: 1.75rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--md-on-surface-variant);
+      opacity: 0; animation: fadeUp 0.6s 1.3s forwards;
+    }
+    .scroll-cue .icon { animation: bob 1.9s ease-in-out infinite; font-size: 22px; }
+    @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(24px); }
+      to   { opacity:1; transform:none; }
+    }
+
+    /* ══════════ CONTENT ══════════ */
+    .content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 6rem; }
+
+    /* Section header */
+    .sec-hd {
+      display: flex; align-items: center; gap: 1rem;
+      margin: 4.5rem 0 2rem;
+    }
+    .sec-icon {
+      width: 50px; height: 50px; border-radius: var(--shape-md); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sec-icon .icon { font-size: 26px; }
+    .sec-icon.green  { background: var(--md-primary-container);   color: var(--md-on-primary-container); }
+    .sec-icon.blue   { background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
+    .sec-icon.amber  { background: var(--md-tertiary-container);  color: var(--md-on-tertiary-container); }
+    .sec-icon.yellow { background: var(--md-yellow-container);    color: var(--md-on-yellow-container); }
+
+    .sec-num   { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--md-primary); }
+    .sec-title { font-size: clamp(1.75rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; }
+
+    .md-divider { border: none; height: 1px; background: var(--md-outline-variant); }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid; grid-template-columns: 1.05fr 0.95fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .body-text {
+      font-size: 0.95rem; line-height: 1.85;
+      color: var(--md-on-surface-variant);
+    }
+    .body-text + .body-text { margin-top: 0.9rem; }
+    .body-text strong { color: var(--md-on-surface); font-weight: 700; }
+    .body-text a { color: var(--md-primary); text-decoration: none; font-weight: 700; }
+
+    .stats-row { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 2rem; }
+    .stat-card {
+      border-radius: var(--shape-lg); padding: 1rem 1.4rem;
+      display: flex; flex-direction: column; gap: 0.15rem;
+    }
+    .stat-card.green  { background: var(--md-primary-container);   color: var(--md-on-primary-container); }
+    .stat-card.blue   { background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
+    .stat-card.amber  { background: var(--md-tertiary-container);  color: var(--md-on-tertiary-container); }
+    .stat-card .num { font-size: 1.6rem; font-weight: 800; line-height: 1; }
+    .stat-card .lbl { font-size: 0.7rem; font-weight: 700; opacity: 0.75; }
+
+    .photo-frame { position: relative; }
+    .photo-frame::before {
+      content: ''; position: absolute; inset: -7px;
+      border-radius: calc(var(--shape-xl) + 4px);
+      background: linear-gradient(140deg,
+        var(--md-primary-container),
+        var(--md-secondary-container),
+        var(--md-yellow-container));
+      z-index: 0;
+    }
+    .photo-frame img {
+      position: relative; z-index: 1;
+      width: 100%; border-radius: var(--shape-xl);
+      box-shadow: var(--elev-3); display: block;
+    }
+
+    /* ── MD3 Elevated Card ── */
+    .md-card {
+      background: var(--md-surface-low);
+      border-radius: var(--shape-xl);
+      padding: 1.75rem;
+      box-shadow: var(--elev-1);
+      border: 1px solid var(--md-outline-variant);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .md-card:hover { box-shadow: var(--elev-3); transform: translateY(-3px); }
+
+    /* ── TIMELINE ── */
+    .timeline { position: relative; padding-left: 1.75rem; margin-top: 0.5rem; }
+    .timeline::before {
+      content: ''; position: absolute;
+      left: 0; top: 12px; bottom: 12px; width: 2.5px;
+      background: linear-gradient(to bottom,
+        var(--md-primary),
+        var(--md-secondary),
+        var(--md-tertiary),
+        var(--md-yellow),
+        transparent);
+      border-radius: 2px;
+    }
+    .tl-item { position: relative; margin-bottom: 1.5rem; }
+    .tl-node {
+      position: absolute; left: -2.3rem; top: 1.3rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--md-surface-lowest);
+      border: 2.5px solid var(--md-primary);
+      box-shadow: 0 0 0 3.5px var(--md-primary-container);
+      transition: all 0.2s;
+    }
+    .tl-item:hover .tl-node {
+      background: var(--md-primary);
+      box-shadow: 0 0 0 5px var(--md-primary-container);
+    }
+    .tl-node.blue   { border-color: var(--md-secondary); box-shadow: 0 0 0 3.5px var(--md-secondary-container); }
+    .tl-node.amber  { border-color: var(--md-tertiary);  box-shadow: 0 0 0 3.5px var(--md-tertiary-container); }
+
+    .tl-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+    .tl-role   { font-size: 1.12rem; font-weight: 800; color: var(--md-on-surface); }
+    .tl-org-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.35rem; }
+    .org-logo  { width: 26px; height: 26px; object-fit: contain; border-radius: var(--shape-xs); }
+    .tl-org    { font-size: 0.88rem; font-weight: 700; }
+    .tl-org.green { color: var(--md-primary); }
+    .tl-org.blue  { color: var(--md-secondary); }
+    .tl-org.amber { color: var(--md-tertiary); }
+    .tl-meta   { font-size: 0.78rem; color: var(--md-on-surface-variant); margin-bottom: 1rem; }
+
+    .date-badge {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.28rem 0.85rem;
+      border-radius: var(--shape-full);
+      font-size: 0.72rem; font-weight: 700; white-space: nowrap;
+    }
+    .date-badge.green  { background: var(--md-primary-container);   color: var(--md-on-primary-container); }
+    .date-badge.blue   { background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
+    .date-badge.yellow { background: var(--md-yellow-container);    color: var(--md-on-yellow-container); }
+
+    .tl-body { font-size: 0.87rem; line-height: 1.82; color: var(--md-on-surface-variant); }
+    .tl-body + .tl-body { margin-top: 0.7rem; }
+    .tl-body strong { color: var(--md-on-surface); font-weight: 700; }
+
+    .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+    .md-chip {
+      padding: 0.28rem 0.85rem;
+      border-radius: var(--shape-full);
+      border: 1px solid var(--md-outline-variant);
+      background: var(--md-surface-container);
+      color: var(--md-on-surface-variant);
+      font-size: 0.71rem; font-weight: 700;
+      transition: all 0.2s; cursor: default; font-family: var(--font);
+    }
+    .md-chip:hover {
+      background: var(--md-primary-container);
+      color: var(--md-on-primary-container);
+      border-color: var(--md-primary);
+    }
+
+    /* ── OTW BANNER ── */
+    .otw-banner {
+      background: var(--md-secondary-container);
+      border-radius: var(--shape-xl);
+      border: 1px solid rgba(26,111,168,0.3);
+      padding: 1.75rem;
+      display: flex; align-items: flex-start; gap: 1.25rem; flex-wrap: wrap;
+      margin-bottom: 2.5rem; box-shadow: var(--elev-1);
+    }
+    .otw-icon-wrap {
+      width: 50px; height: 50px; border-radius: var(--shape-md); flex-shrink: 0;
+      background: var(--md-secondary);
+      color: var(--md-on-secondary);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .otw-icon-wrap .icon { font-size: 26px; }
+    .otw-content { flex: 1; min-width: 260px; }
+    .otw-title { font-size: 1.05rem; font-weight: 800; color: var(--md-on-secondary-container); margin-bottom: 0.45rem; }
+    .otw-sub   { font-size: 0.85rem; line-height: 1.65; color: var(--md-on-secondary-container); opacity: 0.82; }
+    .otw-roles { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .otw-role {
+      padding: 0.3rem 0.9rem;
+      border-radius: var(--shape-full);
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(26,111,168,0.35);
+      color: var(--md-on-secondary-container);
+      font-size: 0.73rem; font-weight: 700; font-family: var(--font);
+    }
+
+    /* ── EDUCATION ── */
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .edu-card {
+      background: var(--md-surface-low);
+      border-radius: var(--shape-xl);
+      border: 1px solid var(--md-outline-variant);
+      box-shadow: var(--elev-1);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .edu-card:hover { box-shadow: var(--elev-3); transform: translateY(-4px); }
+    .edu-stripe { height: 5px; }
+    .edu-stripe.green  { background: linear-gradient(90deg, var(--md-primary), #52B788); }
+    .edu-stripe.blue   { background: linear-gradient(90deg, var(--md-secondary), #56B4E9); }
+    .edu-stripe.amber  { background: linear-gradient(90deg, var(--md-tertiary), #E9A84C); }
+    .edu-stripe.yellow { background: linear-gradient(90deg, var(--md-yellow), #F4C842); }
+    .edu-body-pad { padding: 1.5rem; flex: 1; }
+    .edu-logo { width: 40px; height: 40px; object-fit: contain; border-radius: var(--shape-sm); margin-bottom: 1rem; display: block; }
+    .edu-icon-box {
+      width: 44px; height: 44px; border-radius: var(--shape-md);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .edu-icon-box.green  { background: var(--md-primary-container);   color: var(--md-on-primary-container); }
+    .edu-icon-box.blue   { background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
+    .edu-icon-box.amber  { background: var(--md-tertiary-container);  color: var(--md-on-tertiary-container); }
+    .edu-icon-box.yellow { background: var(--md-yellow-container);    color: var(--md-on-yellow-container); }
+    .edu-title { font-size: 0.97rem; font-weight: 800; color: var(--md-on-surface); margin-bottom: 0.25rem; }
+    .edu-org   { font-size: 0.79rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .edu-org.green  { color: var(--md-primary); }
+    .edu-org.blue   { color: var(--md-secondary); }
+    .edu-org.amber  { color: var(--md-tertiary); }
+    .edu-org.yellow { color: var(--md-yellow); }
+    .edu-detail { font-size: 0.8rem; line-height: 1.7; color: var(--md-on-surface-variant); }
+    .edu-detail a { color: var(--md-primary); text-decoration: none; font-weight: 700; }
+    .edu-detail a:hover { text-decoration: underline; }
+
+    /* ── SKILLS ── */
+    .skill-group { margin-bottom: 2.25rem; }
+    .skill-group-label {
+      font-size: 0.73rem; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 0.8rem;
+    }
+    .skill-group-label.green  { color: var(--md-primary); }
+    .skill-group-label.blue   { color: var(--md-secondary); }
+    .skill-group-label.amber  { color: var(--md-tertiary); }
+    .skill-chips { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+    .skill-chip {
+      padding: 0.44rem 1.1rem;
+      border-radius: var(--shape-full);
+      border: 1.5px solid var(--md-outline-variant);
+      background: var(--md-surface-lowest);
+      color: var(--md-on-surface-variant);
+      font-size: 0.8rem; font-weight: 600; font-family: var(--font);
+      cursor: default; transition: all 0.2s;
+    }
+    .skill-chip:hover {
+      background: var(--md-primary-container);
+      color: var(--md-on-primary-container);
+      border-color: var(--md-primary);
+      transform: translateY(-2px);
+      box-shadow: var(--elev-1);
+    }
+
+    /* ── HOBBIES ── */
+    .hobby-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+    .hobby-card {
+      background: var(--md-surface-low);
+      border-radius: var(--shape-xl);
+      border: 1px solid var(--md-outline-variant);
+      padding: 2rem 1.25rem 1.5rem;
+      text-align: center; box-shadow: var(--elev-1);
+      transition: all 0.25s; position: relative; overflow: hidden;
+    }
+    .hobby-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    }
+    .hobby-card:nth-child(1)::before { background: linear-gradient(90deg, var(--md-primary), #52B788); }
+    .hobby-card:nth-child(2)::before { background: linear-gradient(90deg, var(--md-secondary), #56B4E9); }
+    .hobby-card:nth-child(3)::before { background: linear-gradient(90deg, var(--md-tertiary), var(--md-yellow)); }
+    .hobby-card:hover { box-shadow: var(--elev-3); transform: translateY(-5px); }
+    .hobby-icon {
+      width: 58px; height: 58px; border-radius: var(--shape-full);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem; font-size: 1.65rem;
+    }
+    .hobby-card:nth-child(1) .hobby-icon { background: var(--md-primary-container); }
+    .hobby-card:nth-child(2) .hobby-icon { background: var(--md-secondary-container); }
+    .hobby-card:nth-child(3) .hobby-icon { background: var(--md-tertiary-container); }
+    .hobby-label { font-size: 0.95rem; font-weight: 800; color: var(--md-on-surface); }
+    .hobby-sub   { font-size: 0.77rem; color: var(--md-on-surface-variant); margin-top: 0.3rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--md-inverse-surface);
+      color: var(--md-inverse-on-surface);
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+    .footer-name {
+      display: block; margin-bottom: 1.25rem;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800; letter-spacing: -0.025em;
+      color: var(--md-inverse-primary);
+    }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem; }
+    .footer-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.48rem 1.15rem;
+      border-radius: var(--shape-full);
+      background: rgba(255,255,255,0.09);
+      color: var(--md-inverse-on-surface);
+      font-size: 0.84rem; font-weight: 600; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.14);
+      transition: background 0.2s; font-family: var(--font);
+    }
+    .footer-link:hover { background: rgba(255,255,255,0.18); }
+    .footer-copy { font-size: 0.73rem; opacity: 0.5; line-height: 1.8; }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: 0.08s; } .d2 { transition-delay: 0.16s; }
+    .d3 { transition-delay: 0.24s; } .d4 { transition-delay: 0.32s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .app-bar { padding: 0 0.75rem; }
+      .nav-chips { display: none; }
+      .hero, .content { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-photo { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .photo-frame { order: -1; }
+      .hobby-grid { grid-template-columns: repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- ══ TOP APP BAR ══ -->
+<header class="app-bar" id="appBar">
+  <span class="app-bar-title">Anthony <span>Fong</span></span>
+  <nav class="nav-chips">
+    <a href="#about"      class="nav-chip">About</a>
+    <a href="#experience" class="nav-chip">Experience</a>
+    <a href="#education"  class="nav-chip">Education</a>
+    <a href="#skills"     class="nav-chip">Skills</a>
+    <a href="#contact"    class="nav-chip">Contact</a>
+  </nav>
+  <div class="bar-actions">
+    <a href="https://www.linkedin.com/in/anphonie/" target="_blank" class="icon-btn" title="LinkedIn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="mailto:anthonyfong20@proton.me" class="icon-btn" title="Email">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </a>
   </div>
-</div>
-</div>
-<!-- Background image -->
-<!-- Navbar -->
 </header>
 
-<!--Profile picture-->
-    <main class="my-5">
-      <div class="container">
-      <div class="row mb-5 gx-5">
-        <div class="col-md-5">
-          <div>
-        <img src="img/Cropped.jpg" class="w-100" alt="Louvre" />
-      </div>
-        </div>
-        <div class="col-md-7">
-          <h1>About Me</h1>
-          <p>Graduated with a Bachelor of Science in Information Technology from the University of Technology Sydney, 
-I have a strong background in technical support within End User Computing and Desktop Support environments. 
-As a Service Desk Analyst II, I provide support in Active Directory, keeping user and computer records accurate and up to date. 
-I deploy laptops and software using Intune, and maintain AV and meeting room systems by coordinating with vendors and managing support requests. 
-            <br><br>
-            With three years of experience in IT support and desktop environments, 
-I’m confident in troubleshooting complex issues and implementing effective solutions across Windows and macOS, 
-delivering timely outcomes that consistently meet service levels while maintaining high customer satisfaction. 
-I’m ITIL V4 certified in IT Service Management, ensuring my work follows best-practice frameworks and recognised ITIL processes. 
-Alongside my support experience, I have solid technical skills in Java, HTML, PowerShell, and various remote support tools.
-          </p>
-          <hr />
-      </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card  ">
+<main>
 
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img src="img/UTS.jpeg" class="img-fluid" />
-    <a href="https://drive.google.com/file/d/1WxkuickkzwmSkSsVuk8AMN0IOdpxZU29/view?usp=sharing">
-      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-canvas">
+      <div class="blob blob-a"></div>
+      <div class="blob blob-b"></div>
+      <div class="blob blob-c"></div>
+      <div class="blob blob-d"></div>
+
+      <!-- Botanical SVG decoration -->
+      <svg class="hero-botanical" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+        <!-- Stems -->
+        <path d="M360 400 Q340 320 370 240 Q390 180 350 120" stroke="#2D6A4F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M380 400 Q400 340 385 270 Q370 210 400 150" stroke="#2D6A4F" stroke-width="2" fill="none" stroke-linecap="round" opacity=".6"/>
+        <path d="M340 380 Q310 310 330 230 Q345 170 310 100" stroke="#1A6FA8" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
+        <!-- Leaves -->
+        <ellipse cx="345" cy="200" rx="28" ry="14" fill="#D8F3DC" stroke="#2D6A4F" stroke-width="1.5" transform="rotate(-40 345 200)"/>
+        <ellipse cx="375" cy="155" rx="24" ry="11" fill="#D8F3DC" stroke="#2D6A4F" stroke-width="1.5" transform="rotate(30 375 155)" opacity=".7"/>
+        <ellipse cx="325" cy="160" rx="22" ry="10" fill="#C9E6FF" stroke="#1A6FA8" stroke-width="1.5" transform="rotate(-55 325 160)" opacity=".7"/>
+        <ellipse cx="395" cy="220" rx="20" ry="9" fill="#FFE1BF" stroke="#B05E00" stroke-width="1.5" transform="rotate(20 395 220)" opacity=".65"/>
+        <!-- Flower clusters -->
+        <circle cx="350" cy="118" r="8"  fill="#FFF0C2" stroke="#C07A00" stroke-width="1.5"/>
+        <circle cx="365" cy="108" r="6"  fill="#FFE1BF" stroke="#B05E00" stroke-width="1.5" opacity=".8"/>
+        <circle cx="338" cy="110" r="5"  fill="#D8F3DC" stroke="#2D6A4F" stroke-width="1.5" opacity=".8"/>
+        <circle cx="405" cy="148" r="7"  fill="#C9E6FF" stroke="#1A6FA8" stroke-width="1.5" opacity=".75"/>
+        <circle cx="420" cy="160" r="5"  fill="#D8F3DC" stroke="#2D6A4F" stroke-width="1.5" opacity=".65"/>
+        <!-- Small dots -->
+        <circle cx="360" cy="90"  r="3" fill="#FFF0C2" opacity=".7"/>
+        <circle cx="330" cy="95"  r="2.5" fill="#C9E6FF" opacity=".6"/>
+        <circle cx="378" cy="100" r="2" fill="#D8F3DC" opacity=".7"/>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <div>
+        <div class="otw-chip">
+          <div class="otw-pulse"></div>
+          Open to new opportunities
+        </div>
+        <h1 class="hero-display">Anthony<br/><span class="hi">Fong.</span></h1>
+        <p class="hero-headline">IT Professional &nbsp;·&nbsp; ITIL V4 Certified &nbsp;·&nbsp; UTS Graduate</p>
+        <p class="hero-location">
+          <span class="icon" style="font-size:16px">location_on</span>
+          Sydney, New South Wales, Australia &nbsp;·&nbsp; He/Him
+        </p>
+        <div class="btn-row">
+          <a href="https://drive.google.com/file/d/1TMazSgcjxOLbI-U0XYVIY9Hu4yoVxxgM/view?usp=sharing"
+             class="md-btn btn-filled" target="_blank">
+            <span class="icon">download</span>Resume PDF
+          </a>
+          <a href="https://www.linkedin.com/in/anphonie/" class="md-btn btn-tonal" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:anthonyfong20@proton.me" class="md-btn btn-outlined">
+            <span class="icon">mail</span>Contact Me
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="https://anphonie.github.io/resume/img/Cropped.jpg" alt="Anthony Fong"
+          onerror="this.parentElement.style.display='none'"/>
+      </div>
+    </div>
+
+    <div class="scroll-cue">
+      <span class="icon">keyboard_arrow_down</span>
+    </div>
+  </section>
+
+  <!-- ══ CONTENT AREA ══ -->
+  <div class="content">
+
+    <!-- ABOUT -->
+    <div id="about">
+      <div class="sec-hd reveal">
+        <div class="sec-icon green"><span class="icon">person</span></div>
+        <div>
+          <div class="sec-num">01 — About</div>
+          <h2 class="sec-title">The person behind<br/>the support ticket.</h2>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div>
+          <p class="body-text reveal">Graduated with a <strong>Bachelor of Science in Information Technology</strong> from the University of Technology Sydney, majoring in Interaction Design with a sub-major in Computer Graphics.</p>
+          <p class="body-text reveal d1">With over <strong>three years of hands-on IT experience</strong> across enterprise and education environments, I'm confident troubleshooting complex issues across <strong>Windows and macOS</strong> — consistently meeting SLAs and maintaining high customer satisfaction.</p>
+          <p class="body-text reveal d2">I'm <strong>ITIL V4 certified</strong> and passionate about building things, from PowerApps tools at work to my browser game <a href="https://anphonie.itch.io/drippity-drop" target="_blank">Drippity Drop</a> created at UTS.</p>
+          <div class="stats-row reveal d2">
+            <div class="stat-card green"><div class="num">3+</div><div class="lbl">Years in IT</div></div>
+            <div class="stat-card blue"><div class="num">200+</div><div class="lbl">Devices Managed</div></div>
+            <div class="stat-card amber"><div class="num">ITIL V4</div><div class="lbl">Certified</div></div>
+          </div>
+        </div>
+        <div class="photo-frame reveal d3">
+          <img src="https://anphonie.github.io/resume/img/Cropped.jpg" alt="Anthony Fong"
+            onerror="this.parentElement.style.display='none'"/>
+        </div>
+      </div>
+    </div>
+
+    <hr class="md-divider" style="margin:4rem 0"/>
+
+    <!-- EXPERIENCE -->
+    <div id="experience">
+      <div class="sec-hd reveal">
+        <div class="sec-icon blue"><span class="icon">work</span></div>
+        <div>
+          <div class="sec-num">02 — Experience</div>
+          <h2 class="sec-title">Where I've<br/>made impact.</h2>
+        </div>
+      </div>
+
+      <!-- Open to Work Banner -->
+      <div class="otw-banner reveal">
+        <div class="otw-icon-wrap"><span class="icon" style="font-size:26px">explore</span></div>
+        <div class="otw-content">
+          <div class="otw-title">Open to All Opportunities</div>
+          <div class="otw-sub">I'm exploring roles well beyond IT support — including project coordination, operations, digital transformation, systems administration, and any role where strong communication, problem-solving, and a drive to build efficient systems can add value.</div>
+          <div class="otw-roles">
+            <span class="otw-role">IT Support & Service Desk</span>
+            <span class="otw-role">IT Project Coordinator</span>
+            <span class="otw-role">Operations & Process</span>
+            <span class="otw-role">Digital Transformation</span>
+            <span class="otw-role">Systems Administrator</span>
+            <span class="otw-role">Junior IT Manager</span>
+            <span class="otw-role">Business Analyst</span>
+            <span class="otw-role">Technical Account Manager</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline">
+
+        <!-- L.E.K. -->
+        <div class="tl-item reveal">
+          <div class="tl-node"></div>
+          <div class="md-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-org-row">
+                  <img src="https://anphonie.github.io/resume/img/LEK.png" class="org-logo" alt="L.E.K."
+                    onerror="this.style.display='none'"/>
+                  <span class="tl-org green">L.E.K. Consulting</span>
+                </div>
+                <div class="tl-role">Service Desk Analyst II</div>
+                <div class="tl-meta">Sydney, NSW &nbsp;·&nbsp; Hybrid</div>
+              </div>
+              <div class="date-badge green">
+                <span class="icon" style="font-size:13px">calendar_month</span>
+                Sep 2024 – Present · 1 yr 7 mos
+              </div>
+            </div>
+            <p class="tl-body">Provided high-volume end-user support across <strong>Microsoft 365, Azure AD, Exchange On-Premise, Windows 10/11</strong>, and business applications — consistently keeping the ticket backlog among the lowest on the team. Tracked, owned, and resolved requests through the ITSM system; set up devices and policies using <strong>Intune</strong>.</p>
+            <p class="tl-body">Managed user access including MFA, user roles, security groups, and Active Directory changes. Handled device encryption with <strong>BitLocker</strong> and email security via <strong>Mimecast</strong>. Built a new <strong>PowerApps tool</strong> to replace a legacy system, and collaborated with global IT teams to reduce backlog across regions.</p>
+            <div class="chip-row">
+              <span class="md-chip">Microsoft 365</span><span class="md-chip">Azure AD</span><span class="md-chip">Exchange On-Prem</span><span class="md-chip">Intune</span><span class="md-chip">Active Directory</span><span class="md-chip">BitLocker</span><span class="md-chip">Mimecast</span><span class="md-chip">PowerApps</span><span class="md-chip">ITSM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emanuel School -->
+        <div class="tl-item reveal d1">
+          <div class="tl-node blue"></div>
+          <div class="md-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-org-row">
+                  <span class="tl-org blue">Emanuel School</span>
+                </div>
+                <div class="tl-role">ICT Service & Support Concierge</div>
+                <div class="tl-meta">Full-time &nbsp;·&nbsp; Randwick, NSW &nbsp;·&nbsp; On-site</div>
+              </div>
+              <div class="date-badge blue">
+                <span class="icon" style="font-size:13px">calendar_month</span>
+                Aug 2022 – Jul 2024 · 2 yrs
+              </div>
+            </div>
+            <p class="tl-body">Provided comprehensive technical support across the school via phone and in-person. Configured, deployed, and maintained <strong>200+ MacBooks and iPads annually</strong> using <strong>Jamf Pro (MDM)</strong> and Microsoft Office 365. Managed asset inventory with Snipe and coordinated supplier repairs.</p>
+            <p class="tl-body">Performed remote troubleshooting to minimise downtime and created a <strong>knowledge base of self-help articles</strong> to empower users to resolve common issues independently.</p>
+            <div class="chip-row">
+              <span class="md-chip">Jamf Pro</span><span class="md-chip">MDM</span><span class="md-chip">macOS</span><span class="md-chip">iPadOS</span><span class="md-chip">Microsoft 365</span><span class="md-chip">Snipe</span><span class="md-chip">Asset Management</span><span class="md-chip">Knowledge Base</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7-Eleven -->
+        <div class="tl-item reveal d2">
+          <div class="tl-node amber"></div>
+          <div class="md-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-org-row">
+                  <span class="tl-org amber">7-Eleven</span>
+                </div>
+                <div class="tl-role">Retail Assistant</div>
+                <div class="tl-meta">Part-time &nbsp;·&nbsp; Australia &nbsp;·&nbsp; On-site</div>
+              </div>
+              <div class="date-badge yellow">
+                <span class="icon" style="font-size:13px">calendar_month</span>
+                Oct 2016 – Aug 2022 · 5 yrs 11 mos
+              </div>
+            </div>
+            <p class="tl-body">Delivered high-quality customer service at a high-traffic location next to Royal Prince Alfred Hospital (RPA). <strong>Won Store of the Month</strong> for exceeding NSW promotional sales targets multiple times. Led and trained new staff to meet sales and operational goals.</p>
+            <div class="chip-row">
+              <span class="md-chip">Customer Service</span><span class="md-chip">Sales</span><span class="md-chip">Staff Training</span><span class="md-chip">Stock Management</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="md-divider" style="margin:4rem 0"/>
+
+    <!-- EDUCATION -->
+    <div id="education">
+      <div class="sec-hd reveal">
+        <div class="sec-icon amber"><span class="icon">school</span></div>
+        <div>
+          <div class="sec-num">03 — Education & Certifications</div>
+          <h2 class="sec-title">Always<br/>levelling up.</h2>
+        </div>
+      </div>
+
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-stripe green"></div>
+          <div class="edu-body-pad">
+            <img src="https://anphonie.github.io/resume/img/UTS.jpeg" class="edu-logo" alt="UTS"
+              onerror="this.style.display='none'"/>
+            <div class="edu-title">Bachelor of Science in Information Technology</div>
+            <div class="edu-org green">University of Technology Sydney</div>
+            <div class="edu-detail">Mar 2020 – Feb 2022<br/>Major: Interaction Design<br/>Sub-Major: Computer Graphics</div>
+          </div>
+        </div>
+
+        <div class="edu-card reveal d1">
+          <div class="edu-stripe blue"></div>
+          <div class="edu-body-pad">
+            <div class="edu-icon-box blue"><span class="icon">article</span></div>
+            <div class="edu-title">Diploma in Information Technology</div>
+            <div class="edu-org blue">UTS College</div>
+            <div class="edu-detail">Mar 2019 – Jan 2020<br/>Pathway program into the UTS IT degree</div>
+          </div>
+        </div>
+
+        <div class="edu-card reveal d2">
+          <div class="edu-stripe amber"></div>
+          <div class="edu-body-pad">
+            <img src="https://anphonie.github.io/resume/img/ITIL.jpg" class="edu-logo" alt="ITIL"
+              onerror="this.style.display='none'"/>
+            <div class="edu-title">ITIL® v4 Foundation</div>
+            <div class="edu-org amber">AXELOS Global Best Practice</div>
+            <div class="edu-detail">Issued Sep 2023 · Expires Sep 2026<br/>Credential ID: GR671565575WF<br/>IT Service Management · Communication</div>
+          </div>
+        </div>
+
+        <div class="edu-card reveal d3">
+          <div class="edu-stripe yellow"></div>
+          <div class="edu-body-pad">
+            <div class="edu-icon-box yellow"><span class="icon">sports_esports</span></div>
+            <div class="edu-title">Drippity Drop — Game Dev Project</div>
+            <div class="edu-org yellow">University of Technology Sydney</div>
+            <div class="edu-detail">Final degree project — a playable browser game.<br/><a href="https://anphonie.itch.io/drippity-drop" target="_blank">Play on itch.io →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="md-divider" style="margin:4rem 0"/>
+
+    <!-- SKILLS -->
+    <div id="skills">
+      <div class="sec-hd reveal">
+        <div class="sec-icon green"><span class="icon">build</span></div>
+        <div>
+          <div class="sec-num">04 — Skills</div>
+          <h2 class="sec-title">Tools of<br/>the trade.</h2>
+        </div>
+      </div>
+
+      <div class="skill-group reveal d1">
+        <div class="skill-group-label green">End User Computing & Support</div>
+        <div class="skill-chips">
+          <span class="skill-chip">Microsoft 365</span><span class="skill-chip">Azure AD</span><span class="skill-chip">Exchange On-Premise</span><span class="skill-chip">Intune</span><span class="skill-chip">Active Directory</span><span class="skill-chip">Windows 10/11</span><span class="skill-chip">macOS</span><span class="skill-chip">BitLocker</span><span class="skill-chip">Mimecast</span><span class="skill-chip">Jamf Pro</span><span class="skill-chip">Remote Desktop</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal d2">
+        <div class="skill-group-label blue">Development & Automation</div>
+        <div class="skill-chips">
+          <span class="skill-chip">PowerShell</span><span class="skill-chip">PowerApps</span><span class="skill-chip">Java</span><span class="skill-chip">HTML / CSS</span><span class="skill-chip">Git / GitHub</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal d3">
+        <div class="skill-group-label amber">Frameworks & Professional Skills</div>
+        <div class="skill-chips">
+          <span class="skill-chip">ITIL V4</span><span class="skill-chip">Incident Management</span><span class="skill-chip">SLA Adherence</span><span class="skill-chip">Vendor Coordination</span><span class="skill-chip">Knowledge Base Authoring</span><span class="skill-chip">Asset Management</span><span class="skill-chip">Customer Service</span><span class="skill-chip">Staff Training</span><span class="skill-chip">Project Support</span><span class="skill-chip">Documentation</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="md-divider" style="margin:4rem 0"/>
+
+    <!-- HOBBIES -->
+    <div id="hobbies">
+      <div class="sec-hd reveal">
+        <div class="sec-icon yellow"><span class="icon">favorite</span></div>
+        <div>
+          <div class="sec-num">05 — Outside the Office</div>
+          <h2 class="sec-title">What fuels<br/>my curiosity.</h2>
+        </div>
+      </div>
+
+      <div class="hobby-grid">
+        <div class="hobby-card reveal">
+          <div class="hobby-icon">📷</div>
+          <div class="hobby-label">Photography</div>
+          <div class="hobby-sub">Landscapes & travel shots</div>
+        </div>
+        <div class="hobby-card reveal d1">
+          <div class="hobby-icon">🚗</div>
+          <div class="hobby-label">Cars</div>
+          <div class="hobby-sub">Tinkering & modding</div>
+        </div>
+        <div class="hobby-card reveal d2">
+          <div class="hobby-icon">🎮</div>
+          <div class="hobby-label">Game Dev & Gaming</div>
+          <div class="hobby-sub">Built Drippity Drop at UTS</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer id="contact">
+  <span class="footer-name">Anthony Fong</span>
+  <div class="footer-links">
+    <a href="mailto:anthonyfong20@proton.me" class="footer-link">
+      <span class="icon" style="font-size:16px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24">mail</span>
+      anthonyfong20@proton.me
     </a>
-  </div>
-  <div class="card" data-mdb-theme="dark">
-  <div class="card-body">
-    <h5 class="card-title">Bachelor of Science in Information Technology</h5>
-    <p class="card-text">
-      Major: Interaction Design<br>
-      Sub Major: Computer Graphics
-    </p>
-  </div>
-</div>
-</div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img src="img/LEK.png" class="img-fluid" />
-    <a href="https://www.lek.com/about/who-we-are">
-      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+    <a href="https://www.linkedin.com/in/anphonie/" target="_blank" class="footer-link">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
     </a>
-  </div>
-  <div class="card" data-mdb-theme="dark">
-  <div class="card-body">
-    <h5 class="card-title">Service Desk Analyst II</h5>
-    <p class="card-text">
-       Delivered end-user and desktop support across multiple environments, resolving hardware, software, and network issues.
-Ensured consistent system performance and high levels of user satisfaction through timely assistance.
-    </p>
-  </div>
-
-
-  </div>
-</div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img src="img/ITIL.jpg" class="img-fluid" />
-    <a href="https://drive.google.com/file/d/1PlGY45FUmwBglSkrija_KAN8mPS1a5il/view?usp=sharing">
-      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+    <a href="https://drive.google.com/file/d/1TMazSgcjxOLbI-U0XYVIY9Hu4yoVxxgM/view?usp=sharing" target="_blank" class="footer-link">
+      <span class="icon" style="font-size:16px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24">download</span>
+      Resume PDF
     </a>
+    <a href="https://anphonie.itch.io/drippity-drop" target="_blank" class="footer-link">🎮 Drippity Drop</a>
   </div>
-  <div class="card" data-mdb-theme="dark">
-  <div class="card-body">
-    <h5 class="card-title">ITIL Foundation in IT Service Management</h5>
-    <p class="card-text">
-      - Completed on 2023<br>
-      - Expires 2026
-    </p>
-  </div>
-
-
-  </div>
-</div>
-        </div>
-      </div>
-      </div>
-      </main>
-    <footer>
-      <!-- Footer -->
-<footer class="bg-link text-center ">
-  <!-- Grid container -->
-  <div class="container p-4">
-
-
-
-
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <p>
-
-        More about me: <br>
-        
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="https://www.facebook.com/anphonieqwerty" role="button"><i class="fab fa-facebook-f"></i></a>
-      <!-- Linkedin -->
-      <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/in/anphonie/" role="button"><i class="fab fa-linkedin-in"></i></a>
-
-    </section>
-    <!-- Section: Social media -->
-
-        In my spare time, I love doing photography, working on cars and games. During my course in Science in IT,
-        I have taken great interest in game development. The final project of the game can be played using the button
-        below.
-        <br><br>
-        <a data-mdb-ripple-init class="btn btn-outline-light btn-lg" href="https://anphonie.itch.io/drippity-drop" role="button"
-        >Drippity Drop</a>
-        <br><br>
-        <i>Header photo:</i> Te Anau Downs Scenic Lookout. Own Work.
-        <br> <br>
-      </p>
-    </section>
-    <!-- Section: Text -->
-  </div>
-  <!-- Grid container -->
-
+  <p class="footer-copy">Sydney, Australia &nbsp;·&nbsp; He/Him &nbsp;·&nbsp; Open to new opportunities</p>
+  <p class="footer-copy">Header photo: Te Anau Downs Scenic Lookout — own work</p>
 </footer>
-<!-- Footer -->
-    </footer>
-    <!-- End your project here-->
 
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.umd.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
-  </body>
+<script>
+  // Progress bar + app bar elevation
+  const bar = document.getElementById('progress');
+  const appBar = document.getElementById('appBar');
+  window.addEventListener('scroll', () => {
+    const t = window.scrollY;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (t / h * 100) + '%';
+    appBar.classList.toggle('elevated', t > 10);
+  }, { passive: true });
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Active nav chip
+  const sections = ['about','experience','education','skills','contact'];
+  const chips = document.querySelectorAll('.nav-chip');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 130) cur = id;
+    });
+    chips.forEach(c => c.classList.toggle('active', c.getAttribute('href') === '#' + cur));
+  }, { passive: true });
+
+  // Gentle blob parallax
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    const bs = document.querySelectorAll('.blob');
+    bs.forEach((b, i) => { b.style.transform = `translateY(${y * (0.05 + i * 0.02)}px)`; });
+  }, { passive: true });
+</script>
+</body>
 </html>
