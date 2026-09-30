@@ -4,19 +4,19 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anthony Fong — IT Professional</title>
-  <meta name="description" content="Anthony Fong — IT professional in Sydney, NSW. Advanced On-Site Technician at Fujitsu (Woolworths Group), ITIL V4 certified, UTS graduate. Enterprise macOS & Windows, endpoint management, and service desk excellence."/>
+  <meta name="description" content="Anthony Fong — IT professional in Sydney, NSW. Advanced On-Site Technician at Fujitsu (Woolworths Group), UTS graduate. Enterprise macOS & Windows, endpoint management, and service desk excellence."/>
   <meta name="theme-color" content="#FDFCFB"/>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%2334A853'/%3E%3Ctext%20x='32'%20y='42'%20font-family='Arial,Helvetica,sans-serif'%20font-size='26'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EAF%3C/text%3E%3C/svg%3E"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://anthonyfong.pages.dev/"/>
   <meta property="og:title" content="Anthony Fong — IT Professional"/>
-  <meta property="og:description" content="Advanced On-Site Technician at Fujitsu (Woolworths Group) · ITIL V4 certified · UTS graduate. Enterprise macOS & Windows in Sydney, NSW."/>
+  <meta property="og:description" content="Advanced On-Site Technician at Fujitsu (Woolworths Group) · UTS graduate. Enterprise macOS & Windows in Sydney, NSW."/>
   <meta property="og:image" content="https://anthonyfong.pages.dev/img/Queenstown.JPG"/>
   <meta property="og:image:alt" content="Queenstown, New Zealand"/>
   <meta property="og:site_name" content="Anthony Fong"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Anthony Fong — IT Professional"/>
-  <meta name="twitter:description" content="Advanced On-Site Technician at Fujitsu (Woolworths Group) · ITIL V4 certified · UTS graduate. Enterprise macOS & Windows in Sydney, NSW."/>
+  <meta name="twitter:description" content="Advanced On-Site Technician at Fujitsu (Woolworths Group) · UTS graduate. Enterprise macOS & Windows in Sydney, NSW."/>
   <meta name="twitter:image" content="https://anthonyfong.pages.dev/img/Queenstown.JPG"/>
   <style>
     /* ═══════════════ TOKENS ═══════════════ */
@@ -624,10 +624,13 @@
       background: url("img/Queenstown.JPG") center 30% / cover no-repeat;
       filter: blur(2px) brightness(0.92) saturate(1.1);
       transform: scale(1.04);
+      /* photo fades in from the page background instead of being washed over with a bright overlay */
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.18) 10%, rgba(0,0,0,0.5) 24%, rgba(0,0,0,0.85) 42%, #000 60%);
+              mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.18) 10%, rgba(0,0,0,0.5) 24%, rgba(0,0,0,0.85) 42%, #000 60%);
     }
     footer::after {
       content: ""; position: absolute; inset: 0; z-index: -1;
-      background: linear-gradient(180deg, var(--bg-0) 0%, rgba(27,37,52,0.05) 45%, rgba(27,37,52,0.22) 100%);
+      background: linear-gradient(180deg, rgba(27,37,52,0) 0%, rgba(27,37,52,0.10) 30%, rgba(27,37,52,0.22) 60%, rgba(27,37,52,0.32) 100%);
     }
     .footer-name {
       display: block; margin-bottom: 0.5rem;
@@ -755,7 +758,7 @@
     <div class="hero-inner" id="heroInner">
       <div class="hero-chip"><span class="live-dot"></span>Advanced On-Site Technician · Fujitsu (Woolworths Group)</div>
       <h1 class="hero-name">Anthony<br/><em>Fong.</em></h1>
-      <p class="hero-sub">IT Professional &nbsp;·&nbsp; ITIL V4 Certified &nbsp;·&nbsp; UTS Graduate</p>
+      <p class="hero-sub">IT Professional &nbsp;·&nbsp; ITIL V4 Practices &nbsp;·&nbsp; UTS Graduate</p>
       <p class="hero-loc">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Sydney, New South Wales, Australia &nbsp;·&nbsp; He/Him
@@ -797,11 +800,10 @@
         <div>
           <p class="body-text rv">Graduated with a <strong>Bachelor of Science in Information Technology</strong> from the University of Technology Sydney, majoring in Interaction Design with a sub-major in Computer Graphics.</p>
           <p class="body-text rv d1">With over <strong>four years of hands-on IT experience</strong> across enterprise, consulting, and education environments, I'm confident troubleshooting complex issues on <strong>Windows and macOS</strong> — consistently meeting SLAs and keeping customers smiling.</p>
-          <p class="body-text rv d2">I'm <strong>ITIL V4 certified</strong> and love building things — from a <strong>PowerApps tool</strong> that replaced a manual timesheet process at work to <a href="https://anphonie.itch.io/drippity-drop" target="_blank" rel="noopener">Drippity Drop</a>, the browser game I created at UTS.</p>
+          <p class="body-text rv d2">I follow <strong>ITIL V4 practices</strong> and love building things — from a <strong>PowerApps tool</strong> that replaced a manual timesheet process at work to <a href="https://anphonie.itch.io/drippity-drop" target="_blank" rel="noopener">Drippity Drop</a>, the browser game I created at UTS.</p>
           <div class="stats-row rv d3">
             <div class="stat glass g"><div class="top-line"></div><div class="num" data-count="4" data-suffix="+">4+</div><div class="lbl">Years in IT</div></div>
-            <div class="stat glass b"><div class="top-line"></div><div class="num" data-count="200" data-suffix="+">200+</div><div class="lbl">Devices Managed</div></div>
-            <div class="stat glass a"><div class="top-line"></div><div class="num">ITIL V4</div><div class="lbl">Certified</div></div>
+            <div class="stat glass a"><div class="top-line"></div><div class="num">ITIL V4</div><div class="lbl">Practices</div></div>
           </div>
         </div>
         <div class="photo-frame glass glare rv d2">
@@ -1028,7 +1030,7 @@
         <div class="skill-card glass a rv d2">
           <div class="skill-lbl">Practice &amp; Professional</div>
           <div class="skill-chips">
-            <span class="skill-chip">ITIL V4</span><span class="skill-chip">Incident Management</span><span class="skill-chip">SLA Adherence</span><span class="skill-chip">UAT &amp; Testing</span><span class="skill-chip">Change Approval &amp; Governance</span><span class="skill-chip">KB Authoring</span><span class="skill-chip">Asset Management</span><span class="skill-chip">Vendor Coordination</span><span class="skill-chip">Customer Service</span><span class="skill-chip">Staff Training</span>
+            <span class="skill-chip">ITIL V4 Practices</span><span class="skill-chip">Incident Management</span><span class="skill-chip">SLA Adherence</span><span class="skill-chip">UAT &amp; Testing</span><span class="skill-chip">Change Approval &amp; Governance</span><span class="skill-chip">KB Authoring</span><span class="skill-chip">Asset Management</span><span class="skill-chip">Vendor Coordination</span><span class="skill-chip">Customer Service</span><span class="skill-chip">Staff Training</span>
           </div>
         </div>
       </div>
